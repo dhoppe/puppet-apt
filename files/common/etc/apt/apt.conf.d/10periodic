@@ -1,0 +1,13 @@
+#
+# THIS FILE IS MANAGED BY PUPPET
+# /etc/puppet/modules/production/apt/files/common/etc/apt/apt.conf.d/10periodic
+#
+
+APT::Periodic::Enable "1";
+APT::Periodic::Update-Package-Lists "1";
+APT::Periodic::Download-Upgradeable-Packages "1";
+APT::Periodic::AutocleanInterval "7";
+
+APT::Periodic::MaxAge "30";
+APT::Periodic::MinAge "2";
+APT::Periodic::MaxSize "500";

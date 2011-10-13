@@ -1,0 +1,27 @@
+{
+  "name": "dhoppe-apt",
+  "author": "Dennis Hoppe",
+  "description": "APT Module for Debian, Ubuntu",
+  "license": "GPLv2",
+  "project_page": "http://github.com/dhoppe/puppet-apt",
+  "source": "git://github.com/dhoppe/puppet-apt",
+  "summary": "APT Module",
+  "version": "0.0.1",
+  "checksums": {
+    "Modulefile": "6f31e5164d8649d828e52bfb4c5199f1",
+    "README": "033098a1953868db546cfe5d904d1f7e",
+    "files/common/etc/apt/apt.conf.d/10periodic": "8069251dda95f4714fad46e4d78eb9e3",
+    "files/lenny/etc/apt/apt.conf.d/10periodic": "553112362791612ec88d3e42b9ed5ac7",
+    "files/lenny/etc/apt/apt.conf.d/20archive": "9e28a07261e6ad5ede22d5286291ca23",
+    "files/lenny/etc/apt/preferences": "34ad656387fedaf0d7edf63c86cc9666",
+    "manifests/init.pp": "20bf7cb94978e04bc21eb8a63403b925",
+    "spec/spec.opts": "a600ded995d948e393fbe2320ba8e51c",
+    "spec/spec_helper.rb": "ca19ec4f451ebc7fdb035b52eae6e909",
+    "templates/lenny/etc/apt/sources.list.erb": "64684fa734ab3bd57103da0ef3a84027",
+    "templates/maverick/etc/apt/sources.list.erb": "f3213fc1c6246b385bc83af640892311",
+    "templates/natty/etc/apt/sources.list.erb": "32cf7528f3e59bbd76f7b3b94e38ca2b",
+    "templates/squeeze/etc/apt/sources.list.erb": "c6c47a04ec2367c60b149a574aa5baf7",
+    "tests/init.pp": "ac6b9828afa2d13ad2bc3e7a61070841"
+  },
+  "dependencies": []
+}

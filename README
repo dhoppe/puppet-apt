@@ -1,0 +1,23 @@
+# Class: apt
+#   This module manages apt
+#
+# Definition:
+#   apt::url
+#
+# Parameters:
+#   $debian - specify the url, default is ftp.de.debian.org
+#   $ubuntu - specify the url, default is de.archive.ubuntu.com
+#   $source - does the mirror contains the source files, default is false
+#
+# Actions:
+#   Installs the sources.list etc.
+#
+# Requires:
+#   -
+#
+# Sample Usage:
+#   apt::url { "/etc/apt/sources.list":
+#      debian => "192.168.122.1",
+#      ubuntu => "192.168.122.1",
+#      source => false,
+#   }
