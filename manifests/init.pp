@@ -66,12 +66,13 @@ class apt {
 		}
 	} else {
 		file { "/etc/apt/preferences.d":
-			force  => true,
-			purge  => true,
-			owner  => root,
-			group  => root,
-			mode   => 0644,
-			source => [
+			force   => true,
+			purge   => true,
+			recurse => true,
+			owner   => root,
+			group   => root,
+			mode    => 0644,
+			source  => [
 				"puppet:///modules/apt/$lsbdistcodename/etc/apt/preferences.d/$hostname",
 				"puppet:///modules/apt/$lsbdistcodename/etc/apt/preferences.d"
 			],
@@ -85,13 +86,14 @@ class apt {
 	}
 
 	file { "/etc/apt/sources.list.d":
-		force  => true,
-		purge  => true,
-		owner  => root,
-		group  => root,
-		mode   => 0644,
-		notify => Exec["aptitude-update"],
-		source => [
+		force   => true,
+		purge   => true,
+		recurse => true,
+		owner   => root,
+		group   => root,
+		mode    => 0644,
+		notify  => Exec["aptitude-update"],
+		source  => [
 			"puppet:///modules/apt/$lsbdistcodename/etc/apt/sources.list.d/$hostname",
 			"puppet:///modules/apt/$lsbdistcodename/etc/apt/sources.list.d"
 		],
