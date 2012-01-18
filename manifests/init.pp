@@ -57,6 +57,13 @@ class apt {
 		}
 	}
 
+	file { "/etc/apt/apt.conf.d/20tmpperms":
+		owner  => root,
+		group  => root,
+		mode   => 0644,
+		source => "puppet:///modules/apt/common/etc/apt/apt.conf.d/20tmpperms",
+	}
+
 	if $lsbdistcodename == "lenny" {
 		file { "/etc/apt/preferences":
 			owner  => root,

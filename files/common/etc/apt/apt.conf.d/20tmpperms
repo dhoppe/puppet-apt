@@ -1,0 +1,7 @@
+#
+# THIS FILE IS MANAGED BY PUPPET
+# /etc/puppet/modules/production/apt/files/common/etc/apt/apt.conf.d/20tmpperms
+#
+
+DPkg::Pre-Invoke {"/bin/mount -o remount,exec /tmp";};
+DPkg::Post-Invoke {"/bin/mount -o remount,noexec /tmp";};
