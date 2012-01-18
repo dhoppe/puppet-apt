@@ -24,7 +24,7 @@ class apt {
 			owner   => root,
 			group   => root,
 			mode    => 0644,
-			content => template("apt/$lsbdistcodename/etc/apt/sources.list.erb"),
+			content => template("apt/$::lsbdistcodename/etc/apt/sources.list.erb"),
 			notify  => Exec["aptitude-update"],
 		}
 	}
@@ -34,19 +34,19 @@ class apt {
 		refreshonly => true,
 	}
 
-	if $lsbdistcodename == "lenny" {
+	if $::lsbdistcodename == "lenny" {
 		file { "/etc/apt/apt.conf.d/10periodic":
 			owner  => root,
 			group  => root,
 			mode   => 0644,
-			source => "puppet:///modules/apt/$lsbdistcodename/etc/apt/apt.conf.d/10periodic",
+			source => "puppet:///modules/apt/$::lsbdistcodename/etc/apt/apt.conf.d/10periodic",
 		}
 
 		file { "/etc/apt/apt.conf.d/20archive":
 			owner  => root,
 			group  => root,
 			mode   => 0644,
-			source => "puppet:///modules/apt/$lsbdistcodename/etc/apt/apt.conf.d/20archive",
+			source => "puppet:///modules/apt/$::lsbdistcodename/etc/apt/apt.conf.d/20archive",
 		}
 	} else {
 		file { "/etc/apt/apt.conf.d/10periodic":
@@ -64,12 +64,12 @@ class apt {
 		source => "puppet:///modules/apt/common/etc/apt/apt.conf.d/20tmpperms",
 	}
 
-	if $lsbdistcodename == "lenny" {
+	if $::lsbdistcodename == "lenny" {
 		file { "/etc/apt/preferences":
 			owner  => root,
 			group  => root,
 			mode   => 0644,
-			source => "puppet:///modules/apt/$lsbdistcodename/etc/apt/preferences",
+			source => "puppet:///modules/apt/$::lsbdistcodename/etc/apt/preferences",
 		}
 	} else {
 		file { "/etc/apt/preferences.d":
@@ -80,8 +80,8 @@ class apt {
 			group   => root,
 			mode    => 0644,
 			source  => [
-				"puppet:///modules/apt/$lsbdistcodename/etc/apt/preferences.d/$hostname",
-				"puppet:///modules/apt/$lsbdistcodename/etc/apt/preferences.d"
+				"puppet:///modules/apt/$::lsbdistcodename/etc/apt/preferences.d/$::hostname",
+				"puppet:///modules/apt/$::lsbdistcodename/etc/apt/preferences.d"
 			],
 		}
 	}
@@ -100,8 +100,8 @@ class apt {
 		group   => root,
 		mode    => 0644,
 		source  => [
-			"puppet:///modules/apt/$lsbdistcodename/etc/apt/sources.list.d/$hostname",
-			"puppet:///modules/apt/$lsbdistcodename/etc/apt/sources.list.d"
+			"puppet:///modules/apt/$::lsbdistcodename/etc/apt/sources.list.d/$::hostname",
+			"puppet:///modules/apt/$::lsbdistcodename/etc/apt/sources.list.d"
 		],
 		notify  => Exec["aptitude-update"],
 	}
