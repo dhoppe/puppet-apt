@@ -35,33 +35,21 @@ class apt {
 	}
 
 	if $::lsbdistcodename == "lenny" {
-		file { "/etc/apt/apt.conf.d/10periodic":
-			owner  => root,
-			group  => root,
-			mode   => 0644,
-			source => "puppet:///modules/apt/$::lsbdistcodename/etc/apt/apt.conf.d/10periodic",
-		}
-
-		file { "/etc/apt/apt.conf.d/20archive":
-			owner  => root,
-			group  => root,
-			mode   => 0644,
-			source => "puppet:///modules/apt/$::lsbdistcodename/etc/apt/apt.conf.d/20archive",
+		file { "/etc/apt/apt.conf.d":
+			recurse => true,
+			owner   => root,
+			group   => root,
+			mode    => 0644,
+			source  => "puppet:///modules/apt/$::lsbdistcodename/etc/apt/apt.conf.d",
 		}
 	} else {
-		file { "/etc/apt/apt.conf.d/10periodic":
+		file { "/etc/apt/apt.conf.d":
+			recurse => true,
 			owner  => root,
 			group  => root,
 			mode   => 0644,
-			source => "puppet:///modules/apt/common/etc/apt/apt.conf.d/10periodic",
+			source => "puppet:///modules/apt/common/etc/apt/apt.conf.d",
 		}
-	}
-
-	file { "/etc/apt/apt.conf.d/20tmpperms":
-		owner  => root,
-		group  => root,
-		mode   => 0644,
-		source => "puppet:///modules/apt/common/etc/apt/apt.conf.d/20tmpperms",
 	}
 
 	if $::lsbdistcodename == "lenny" {
