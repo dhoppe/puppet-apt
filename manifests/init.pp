@@ -24,7 +24,7 @@ class apt {
 			owner   => root,
 			group   => root,
 			mode    => 0644,
-			content => template("apt/$::lsbdistcodename/etc/apt/sources.list.erb"),
+			content => template("apt/${::lsbdistcodename}/etc/apt/sources.list.erb"),
 			notify  => Exec["aptitude-update"],
 		}
 	}
@@ -40,7 +40,14 @@ class apt {
 			owner   => root,
 			group   => root,
 			mode    => 0644,
-			source  => "puppet:///modules/apt/$::lsbdistcodename/etc/apt/apt.conf.d",
+			source  => "puppet:///modules/apt/${::lsbdistcodename}/etc/apt/apt.conf.d",
+		}
+
+		file { "/etc/apt/preferences":
+			owner  => root,
+			group  => root,
+			mode   => 0644,
+			source => "puppet:///modules/apt/${::lsbdistcodename}/etc/apt/preferences",
 		}
 	} else {
 		file { "/etc/apt/apt.conf.d":
@@ -50,16 +57,7 @@ class apt {
 			mode   => 0644,
 			source => "puppet:///modules/apt/common/etc/apt/apt.conf.d",
 		}
-	}
 
-	if $::lsbdistcodename == "lenny" {
-		file { "/etc/apt/preferences":
-			owner  => root,
-			group  => root,
-			mode   => 0644,
-			source => "puppet:///modules/apt/$::lsbdistcodename/etc/apt/preferences",
-		}
-	} else {
 		file { "/etc/apt/preferences.d":
 			force   => true,
 			purge   => true,
@@ -68,8 +66,8 @@ class apt {
 			group   => root,
 			mode    => 0644,
 			source  => [
-				"puppet:///modules/apt/$::lsbdistcodename/etc/apt/preferences.d/$::hostname",
-				"puppet:///modules/apt/$::lsbdistcodename/etc/apt/preferences.d"
+				"puppet:///modules/apt/${::lsbdistcodename}/etc/apt/preferences.d/${::hostname}",
+				"puppet:///modules/apt/${::lsbdistcodename}/etc/apt/preferences.d"
 			],
 		}
 	}
@@ -88,8 +86,8 @@ class apt {
 		group   => root,
 		mode    => 0644,
 		source  => [
-			"puppet:///modules/apt/$::lsbdistcodename/etc/apt/sources.list.d/$::hostname",
-			"puppet:///modules/apt/$::lsbdistcodename/etc/apt/sources.list.d"
+			"puppet:///modules/apt/${::lsbdistcodename}/etc/apt/sources.list.d/${::hostname}",
+			"puppet:///modules/apt/${::lsbdistcodename}/etc/apt/sources.list.d"
 		],
 		notify  => Exec["aptitude-update"],
 	}
