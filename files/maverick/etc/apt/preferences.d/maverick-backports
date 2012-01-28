@@ -1,0 +1,8 @@
+#
+# THIS FILE IS MANAGED BY PUPPET
+# /etc/puppet/modules/production/apt/files/maverick/etc/apt/preferences.d/maverick-backports
+#
+
+Package: *
+Pin: release a=maverick-backports
+Pin-Priority: 200

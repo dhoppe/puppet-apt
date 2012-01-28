@@ -66,6 +66,7 @@ class apt {
 			group   => root,
 			mode    => 0644,
 			source  => [
+				"puppet:///modules/apt/${::lsbdistcodename}/etc/apt/preferences.d/${::lsbdistcodename}",
 				"puppet:///modules/apt/${::lsbdistcodename}/etc/apt/preferences.d/${::hostname}",
 				"puppet:///modules/apt/${::lsbdistcodename}/etc/apt/preferences.d"
 			],
