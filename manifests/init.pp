@@ -74,8 +74,8 @@ class apt {
 	}
 
 	apt::url { "/etc/apt/sources.list":
-		debian => "192.168.122.1",
-		ubuntu => "192.168.122.1",
+		debian => hiera('debian'),
+		ubuntu => hiera('ubuntu'),
 		source => false,
 	}
 
