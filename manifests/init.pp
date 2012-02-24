@@ -65,11 +65,7 @@ class apt {
 			owner   => root,
 			group   => root,
 			mode    => 0644,
-			source  => [
-				"puppet:///modules/apt/${::lsbdistcodename}/etc/apt/preferences.d/${::lsbdistcodename}",
-				"puppet:///modules/apt/${::lsbdistcodename}/etc/apt/preferences.d/${::hostname}",
-				"puppet:///modules/apt/${::lsbdistcodename}/etc/apt/preferences.d"
-			],
+			source  => "puppet:///modules/apt/${::lsbdistcodename}/etc/apt/preferences.d",
 		}
 	}
 
@@ -86,10 +82,7 @@ class apt {
 		owner   => root,
 		group   => root,
 		mode    => 0644,
-		source  => [
-			"puppet:///modules/apt/${::lsbdistcodename}/etc/apt/sources.list.d/${::hostname}",
-			"puppet:///modules/apt/${::lsbdistcodename}/etc/apt/sources.list.d"
-		],
+		source  => "puppet:///modules/apt/${::lsbdistcodename}/etc/apt/sources.list.d",
 		notify  => Exec["aptitude-update"],
 	}
 }
