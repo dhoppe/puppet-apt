@@ -1,3 +1,19 @@
 Package: *
 Pin: release a=lenny-backports
 Pin-Priority: 200
+
+Package: facter
+Pin: release a=lenny-backports
+Pin-Priority: 999
+
+Package: puppet
+Pin: release a=lenny-backports
+Pin-Priority: 999
+
+Package: puppet-common
+Pin: release a=lenny-backports
+Pin-Priority: 999
+
+Package: puppetmaster
+Pin: release a=lenny-backports
+Pin-Priority: 999

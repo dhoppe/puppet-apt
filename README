@@ -13,7 +13,7 @@
 #   Installs the sources.list etc.
 #
 # Requires:
-#   -
+#   Separate partition for /tmp
 #
 # Sample Usage:
 #   apt::url { "/etc/apt/sources.list":
