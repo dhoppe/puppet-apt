@@ -30,8 +30,8 @@ class apt {
 			owner   => root,
 			group   => root,
 			mode    => '0644',
-			content => template("apt/${::lsbdistcodename}/etc/apt/sources.list.erb"),
 			notify  => Exec['aptitude-update'],
+			content => template("apt/${::lsbdistcodename}/etc/apt/sources.list.erb"),
 		}
 	}
 
@@ -88,8 +88,8 @@ class apt {
 		owner   => root,
 		group   => root,
 		mode    => '0644',
-		source  => "puppet:///modules/apt/${::lsbdistcodename}/etc/apt/sources.list.d",
 		notify  => Exec['aptitude-update'],
+		source  => "puppet:///modules/apt/${::lsbdistcodename}/etc/apt/sources.list.d",
 	}
 }
 

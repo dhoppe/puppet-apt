@@ -17,3 +17,11 @@ Pin-Priority: 999
 Package: puppetmaster
 Pin: release a=lenny-backports
 Pin-Priority: 999
+
+Package: rsyslog
+Pin: release a=lenny-backports
+Pin-Priority: 999
+
+Package: rsyslog-relp
+Pin: release a=lenny-backports
+Pin-Priority: 999
