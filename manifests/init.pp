@@ -1,12 +1,18 @@
 class apt {
 	define apt::url($debian = false, $ubuntu = false, $source = false) {
 		$t_debian = $debian ? {
-			false   => 'ftp.de.debian.org',
+			false   => $::lsbdistcodename ? {
+				lenny   => 'archive.debian.org',
+				squeeze => 'ftp.de.debian.org',
+			},
 			default => $debian,
 		}
 
 		$t_debian_src = $source ? {
-			false   => 'ftp.de.debian.org',
+			false   => $::lsbdistcodename ? {
+				lenny   => 'archive.debian.org',
+				squeeze => 'ftp.de.debian.org',
+			},
 			default => $debian,
 		}
 
