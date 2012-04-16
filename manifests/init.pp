@@ -3,7 +3,7 @@ class apt {
 		$t_debian = $debian ? {
 			false   => $::lsbdistcodename ? {
 				lenny   => 'archive.debian.org',
-				squeeze => 'ftp.de.debian.org',
+				default => 'ftp.de.debian.org',
 			},
 			default => $debian,
 		}
@@ -11,7 +11,7 @@ class apt {
 		$t_debian_src = $source ? {
 			false   => $::lsbdistcodename ? {
 				lenny   => 'archive.debian.org',
-				squeeze => 'ftp.de.debian.org',
+				default => 'ftp.de.debian.org',
 			},
 			default => $debian,
 		}
