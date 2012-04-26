@@ -1,0 +1,7 @@
+#
+# THIS FILE IS MANAGED BY PUPPET
+# /etc/puppet/modules/production/apt/files/common/etc/apt/apt.conf.d/20recommends
+#
+
+APT::Install-Recommends "0";
+APT::Install-Suggests "0";
