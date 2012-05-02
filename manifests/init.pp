@@ -1,4 +1,7 @@
 class apt {
+	validate_string(hiera('debian'))
+	validate_string(hiera('ubuntu'))
+
 	define apt::url($debian = false, $ubuntu = false, $source = false) {
 		$t_debian = $debian ? {
 			false   => $::lsbdistcodename ? {
