@@ -4,17 +4,17 @@
 #
 
 # Debian
-deb http://<%= t_debian -%>/debian/ squeeze main contrib non-free
-deb-src http://<%= t_debian_src -%>/debian/ squeeze main contrib non-free
+deb http://<%= mirror_deb -%>/debian/ squeeze main contrib non-free
+deb-src http://<%= mirror_src -%>/debian/ squeeze main contrib non-free
 
 # Debian Security
-deb http://<%= t_debian -%>/debian-security/ squeeze/updates main contrib non-free
-deb-src http://<%= t_debian_src -%>/debian-security/ squeeze/updates main contrib non-free
+deb http://<%= mirror_deb -%>/debian-security/ squeeze/updates main contrib non-free
+deb-src http://<%= mirror_src -%>/debian-security/ squeeze/updates main contrib non-free
 
 # Debian Volatile
-deb http://<%= t_debian -%>/debian/ squeeze-updates main contrib non-free
-deb-src http://<%= t_debian_src -%>/debian/ squeeze-updates main contrib non-free
+deb http://<%= mirror_deb -%>/debian/ squeeze-updates main contrib non-free
+deb-src http://<%= mirror_src -%>/debian/ squeeze-updates main contrib non-free
 
 # Debian Backports
-deb http://<%= t_debian -%>/debian-backports/ squeeze-backports main contrib non-free
-deb-src http://<%= t_debian_src -%>/debian-backports/ squeeze-backports main contrib non-free
+deb http://<%= mirror_deb -%>/debian-backports/ squeeze-backports main contrib non-free
+deb-src http://<%= mirror_src -%>/debian-backports/ squeeze-backports main contrib non-free

@@ -5,9 +5,8 @@
 #   apt::url
 #
 # Parameters:
-#   $debian - specify the url, default is ftp.de.debian.org
-#   $ubuntu - specify the url, default is de.archive.ubuntu.com
-#   $source - does the mirror contains the source files, default is false
+#   $mirror_deb - specify the url
+#   $mirror_src - does the mirror contains the source files
 #
 # Actions:
 #   Installs the sources.list etc.
@@ -16,8 +15,7 @@
 #   Separate partition for /tmp
 #
 # Sample Usage:
-#   apt::url { "/etc/apt/sources.list":
-#      debian => hiera('debian'),
-#      ubuntu => hiera('ubuntu'),
-#      source => false,
+#   apt::url { '/etc/apt/sources.list':
+#     mirror_deb => $mirror_deb,
+#     mirror_src => $mirror_src,
 #   }
