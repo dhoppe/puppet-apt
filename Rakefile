@@ -24,4 +24,4 @@ desc "Check puppet manifests with puppet-lint"
 task :lint do
   system("puppet-lint --with-filename --no-80chars-check manifests")
   system("puppet-lint --with-filename --no-80chars-check tests")
-endrequire 'puppet-lint/tasks/puppet-lint'
+end
