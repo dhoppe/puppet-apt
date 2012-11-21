@@ -7,13 +7,6 @@ class apt::params {
         true  => $mirror,
       }
     }
-    'natty': {
-      $mirror = hiera('ubuntu')
-      $source = hiera('source') ? {
-        false => 'de.archive.ubuntu.com',
-        true  => $mirror,
-      }
-    }
     default: {
       fail("Module ${module_name} does not support ${::lsbdistcodename}")
     }
