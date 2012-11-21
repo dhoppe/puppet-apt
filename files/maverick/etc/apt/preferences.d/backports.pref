@@ -1,3 +1,0 @@
-Package: *
-Pin: release a=maverick-backports
-Pin-Priority: 200

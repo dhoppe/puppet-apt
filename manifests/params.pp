@@ -7,7 +7,7 @@ class apt::params {
         true  => $mirror,
       }
     }
-    'maverick', 'natty': {
+    'natty': {
       $mirror = hiera('ubuntu')
       $source = hiera('source') ? {
         false => 'de.archive.ubuntu.com',
