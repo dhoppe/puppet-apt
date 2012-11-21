@@ -1,12 +1,5 @@
 class apt::params {
   case $::lsbdistcodename {
-    'lenny': {
-      $mirror = hiera('debian')
-      $source = hiera('source') ? {
-        false => 'archive.debian.org',
-        true  => $mirror,
-      }
-    }
     'squeeze': {
       $mirror = hiera('debian')
       $source = hiera('source') ? {

@@ -1,2 +1,0 @@
-DPkg::Pre-Invoke {"/bin/mount -o remount,exec /tmp";};
-DPkg::Post-Invoke {"/bin/mount -o remount,noexec /tmp";};

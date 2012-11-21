@@ -12,39 +12,22 @@ class apt (
     refreshonly => true,
   }
 
-  if $::lsbdistcodename == 'lenny' {
-    file { '/etc/apt/apt.conf.d':
-      recurse => true,
-      owner   => 'root',
-      group   => 'root',
-      mode    => '0644',
-      source  => "puppet:///modules/apt/${::lsbdistcodename}/etc/apt/apt.conf.d",
-    }
+  file { '/etc/apt/apt.conf.d':
+    recurse => true,
+    owner   => 'root',
+    group   => 'root',
+    mode    => '0644',
+    source  => 'puppet:///modules/apt/common/etc/apt/apt.conf.d',
+  }
 
-    file { '/etc/apt/preferences':
-      owner  => 'root',
-      group  => 'root',
-      mode   => '0644',
-      source => "puppet:///modules/apt/${::lsbdistcodename}/etc/apt/preferences",
-    }
-  } else {
-    file { '/etc/apt/apt.conf.d':
-      recurse => true,
-      owner   => 'root',
-      group   => 'root',
-      mode    => '0644',
-      source  => 'puppet:///modules/apt/common/etc/apt/apt.conf.d',
-    }
-
-    file { '/etc/apt/preferences.d':
-      force   => true,
-      purge   => true,
-      recurse => true,
-      owner   => 'root',
-      group   => 'root',
-      mode    => '0644',
-      source  => "puppet:///modules/apt/${::lsbdistcodename}/etc/apt/preferences.d",
-    }
+  file { '/etc/apt/preferences.d':
+    force   => true,
+    purge   => true,
+    recurse => true,
+    owner   => 'root',
+    group   => 'root',
+    mode    => '0644',
+    source  => "puppet:///modules/apt/${::lsbdistcodename}/etc/apt/preferences.d",
   }
 
   apt::url { '/etc/apt/sources.list':

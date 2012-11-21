@@ -1,8 +1,0 @@
-#
-# THIS FILE IS MANAGED BY PUPPET
-# /etc/puppet/modules/production/apt/files/lenny/etc/apt/sources.list.d/hwraid.list
-#
-
-# HWRAID
-deb http://hwraid.le-vert.net/debian/ lenny main
-deb-src http://hwraid.le-vert.net/debian/ lenny main
