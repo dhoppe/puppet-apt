@@ -8,9 +8,9 @@
   "summary": "APT Module",
   "version": "0.0.20",
   "checksums": {
-    ".project": "a25d0cb88dfd420987a19df04dcf5795",
     ".travis.yml": "c4089256774e5cb9094e91a3fe1c2780",
     "Gemfile": "d5ce5c80f3c31e583507eb80b61b7400",
+    "LICENSE": "b234ee4d69f5fce4486a80fdaf4a4263",
     "Modulefile": "2909af6d1f550537b6ca88fff9ed443f",
     "README": "f8c92157ae3f31ea45ce2848bb64d18e",
     "Rakefile": "17e38802c4cef92b76ce3c00b9e339ec",
